@@ -6,30 +6,61 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		88184F282DC4F7F500E51EC0 /* CreateProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88184F272DC4F7F500E51EC0 /* CreateProjectsViewController.swift */; };
+		88184F2A2DC4F80C00E51EC0 /* CreateProjectPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88184F292DC4F80C00E51EC0 /* CreateProjectPresenter.swift */; };
+		88184F2E2DC4F8E000E51EC0 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88184F2C2DC4F8E000E51EC0 /* AppColors.swift */; };
+		882700B72DC3D1B000C40166 /* ProjectsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882700B62DC3D1B000C40166 /* ProjectsModel.swift */; };
+		882700B92DC3D34100C40166 /* ProjectsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882700B82DC3D34100C40166 /* ProjectsCollectionViewCell.swift */; };
+		88458D742DC7AA2D00F3931B /* CreateProjectsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88458D732DC7AA2D00F3931B /* CreateProjectsRouter.swift */; };
+		88458D762DC7AD5100F3931B /* CreateProjectsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88458D752DC7AD5100F3931B /* CreateProjectsDelegate.swift */; };
+		8857574F2DC16CDB0056741B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 885757462DC16CDB0056741B /* Assets.xcassets */; };
+		885757512DC16CDB0056741B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8857574A2DC16CDB0056741B /* LaunchScreen.storyboard */; };
+		885757532DC16CDB0056741B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885757452DC16CDB0056741B /* AppDelegate.swift */; };
+		885757542DC16CDB0056741B /* CozyKnitting.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 885757472DC16CDB0056741B /* CozyKnitting.xcdatamodeld */; };
+		885757552DC16CDB0056741B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8857574B2DC16CDB0056741B /* SceneDelegate.swift */; };
+		885757562DC16CDB0056741B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8857574C2DC16CDB0056741B /* ViewController.swift */; };
+		8857575B2DC170680056741B /* MainTabBarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8857575A2DC170680056741B /* MainTabBarRouter.swift */; };
+		8857575D2DC1722C0056741B /* ProjectRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8857575C2DC1722C0056741B /* ProjectRouter.swift */; };
+		885757612DC1724B0056741B /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885757602DC1724B0056741B /* ProfileRouter.swift */; };
+		885757632DC1725E0056741B /* CounterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885757622DC1725E0056741B /* CounterRouter.swift */; };
+		885757652DC1729F0056741B /* ProjectPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885757642DC1729F0056741B /* ProjectPresenter.swift */; };
+		885757672DC172B20056741B /* CounterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885757662DC172B20056741B /* CounterPresenter.swift */; };
+		885757692DC172C40056741B /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885757682DC172C40056741B /* ProfilePresenter.swift */; };
+		8857576B2DC172DA0056741B /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8857576A2DC172DA0056741B /* ProjectViewController.swift */; };
+		8857576D2DC172E90056741B /* CounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8857576C2DC172E90056741B /* CounterViewController.swift */; };
+		8857576F2DC172FA0056741B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8857576E2DC172FA0056741B /* ProfileViewController.swift */; };
+		88BABD0F2DC7770E00DAB433 /* ImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BABD0E2DC7770E00DAB433 /* ImagePickerViewController.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		88184F272DC4F7F500E51EC0 /* CreateProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProjectsViewController.swift; sourceTree = "<group>"; };
+		88184F292DC4F80C00E51EC0 /* CreateProjectPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProjectPresenter.swift; sourceTree = "<group>"; };
+		88184F2C2DC4F8E000E51EC0 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
+		882700B62DC3D1B000C40166 /* ProjectsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsModel.swift; sourceTree = "<group>"; };
+		882700B82DC3D34100C40166 /* ProjectsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsCollectionViewCell.swift; sourceTree = "<group>"; };
 		883D960D2DA0624700C61DE9 /* CozyKnitting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CozyKnitting.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		88458D732DC7AA2D00F3931B /* CreateProjectsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProjectsRouter.swift; sourceTree = "<group>"; };
+		88458D752DC7AD5100F3931B /* CreateProjectsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProjectsDelegate.swift; sourceTree = "<group>"; };
+		885757452DC16CDB0056741B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		885757462DC16CDB0056741B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		885757482DC16CDB0056741B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		885757492DC16CDB0056741B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8857574B2DC16CDB0056741B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		8857574C2DC16CDB0056741B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8857574E2DC16CDB0056741B /* CozyKnitting.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CozyKnitting.xcdatamodel; sourceTree = "<group>"; };
+		8857575A2DC170680056741B /* MainTabBarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarRouter.swift; sourceTree = "<group>"; };
+		8857575C2DC1722C0056741B /* ProjectRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectRouter.swift; sourceTree = "<group>"; };
+		885757602DC1724B0056741B /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
+		885757622DC1725E0056741B /* CounterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterRouter.swift; sourceTree = "<group>"; };
+		885757642DC1729F0056741B /* ProjectPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectPresenter.swift; sourceTree = "<group>"; };
+		885757662DC172B20056741B /* CounterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterPresenter.swift; sourceTree = "<group>"; };
+		885757682DC172C40056741B /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		8857576A2DC172DA0056741B /* ProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewController.swift; sourceTree = "<group>"; };
+		8857576C2DC172E90056741B /* CounterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewController.swift; sourceTree = "<group>"; };
+		8857576E2DC172FA0056741B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		88BABD0E2DC7770E00DAB433 /* ImagePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		883D96222DA0624B00C61DE9 /* Exceptions for "CozyKnitting" folder in "CozyKnitting" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 883D960C2DA0624700C61DE9 /* CozyKnitting */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		883D960F2DA0624700C61DE9 /* CozyKnitting */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				883D96222DA0624B00C61DE9 /* Exceptions for "CozyKnitting" folder in "CozyKnitting" target */,
-			);
-			path = CozyKnitting;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		883D960A2DA0624700C61DE9 /* Frameworks */ = {
@@ -42,10 +73,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		88184F2D2DC4F8E000E51EC0 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				88184F2C2DC4F8E000E51EC0 /* AppColors.swift */,
+				88458D752DC7AD5100F3931B /* CreateProjectsDelegate.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		882700BA2DC3D3D100C40166 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				882700B82DC3D34100C40166 /* ProjectsCollectionViewCell.swift */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
 		883D96042DA0624700C61DE9 = {
 			isa = PBXGroup;
 			children = (
-				883D960F2DA0624700C61DE9 /* CozyKnitting */,
+				8857574D2DC16CDB0056741B /* CozyKnitting */,
 				883D960E2DA0624700C61DE9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,6 +104,69 @@
 				883D960D2DA0624700C61DE9 /* CozyKnitting.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		885757432DC16CDB0056741B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				882700B62DC3D1B000C40166 /* ProjectsModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8857574D2DC16CDB0056741B /* CozyKnitting */ = {
+			isa = PBXGroup;
+			children = (
+				88184F2D2DC4F8E000E51EC0 /* Helpers */,
+				885757432DC16CDB0056741B /* Models */,
+				885757572DC16CE80056741B /* Views */,
+				885757582DC16CF30056741B /* Presenters */,
+				885757592DC170550056741B /* Routers */,
+				882700BA2DC3D3D100C40166 /* CollectionViewCell */,
+				885757462DC16CDB0056741B /* Assets.xcassets */,
+				885757452DC16CDB0056741B /* AppDelegate.swift */,
+				885757472DC16CDB0056741B /* CozyKnitting.xcdatamodeld */,
+				885757482DC16CDB0056741B /* Info.plist */,
+				8857574A2DC16CDB0056741B /* LaunchScreen.storyboard */,
+				8857574B2DC16CDB0056741B /* SceneDelegate.swift */,
+				8857574C2DC16CDB0056741B /* ViewController.swift */,
+			);
+			path = CozyKnitting;
+			sourceTree = "<group>";
+		};
+		885757572DC16CE80056741B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8857576A2DC172DA0056741B /* ProjectViewController.swift */,
+				8857576C2DC172E90056741B /* CounterViewController.swift */,
+				8857576E2DC172FA0056741B /* ProfileViewController.swift */,
+				88184F272DC4F7F500E51EC0 /* CreateProjectsViewController.swift */,
+				88BABD0E2DC7770E00DAB433 /* ImagePickerViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		885757582DC16CF30056741B /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				885757642DC1729F0056741B /* ProjectPresenter.swift */,
+				885757662DC172B20056741B /* CounterPresenter.swift */,
+				885757682DC172C40056741B /* ProfilePresenter.swift */,
+				88184F292DC4F80C00E51EC0 /* CreateProjectPresenter.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		885757592DC170550056741B /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				8857575A2DC170680056741B /* MainTabBarRouter.swift */,
+				8857575C2DC1722C0056741B /* ProjectRouter.swift */,
+				885757622DC1725E0056741B /* CounterRouter.swift */,
+				885757602DC1724B0056741B /* ProfileRouter.swift */,
+				88458D732DC7AA2D00F3931B /* CreateProjectsRouter.swift */,
+			);
+			path = Routers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -72,9 +183,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				883D960F2DA0624700C61DE9 /* CozyKnitting */,
 			);
 			name = CozyKnitting;
 			packageProductDependencies = (
@@ -122,6 +230,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8857574F2DC16CDB0056741B /* Assets.xcassets in Resources */,
+				885757512DC16CDB0056741B /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,10 +242,43 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88184F282DC4F7F500E51EC0 /* CreateProjectsViewController.swift in Sources */,
+				885757672DC172B20056741B /* CounterPresenter.swift in Sources */,
+				88458D762DC7AD5100F3931B /* CreateProjectsDelegate.swift in Sources */,
+				885757692DC172C40056741B /* ProfilePresenter.swift in Sources */,
+				8857576B2DC172DA0056741B /* ProjectViewController.swift in Sources */,
+				885757532DC16CDB0056741B /* AppDelegate.swift in Sources */,
+				885757632DC1725E0056741B /* CounterRouter.swift in Sources */,
+				885757612DC1724B0056741B /* ProfileRouter.swift in Sources */,
+				885757652DC1729F0056741B /* ProjectPresenter.swift in Sources */,
+				88184F2E2DC4F8E000E51EC0 /* AppColors.swift in Sources */,
+				885757542DC16CDB0056741B /* CozyKnitting.xcdatamodeld in Sources */,
+				882700B72DC3D1B000C40166 /* ProjectsModel.swift in Sources */,
+				8857576D2DC172E90056741B /* CounterViewController.swift in Sources */,
+				88458D742DC7AA2D00F3931B /* CreateProjectsRouter.swift in Sources */,
+				88BABD0F2DC7770E00DAB433 /* ImagePickerViewController.swift in Sources */,
+				885757552DC16CDB0056741B /* SceneDelegate.swift in Sources */,
+				885757562DC16CDB0056741B /* ViewController.swift in Sources */,
+				88184F2A2DC4F80C00E51EC0 /* CreateProjectPresenter.swift in Sources */,
+				8857576F2DC172FA0056741B /* ProfileViewController.swift in Sources */,
+				882700B92DC3D34100C40166 /* ProjectsCollectionViewCell.swift in Sources */,
+				8857575D2DC1722C0056741B /* ProjectRouter.swift in Sources */,
+				8857575B2DC170680056741B /* MainTabBarRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8857574A2DC16CDB0056741B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				885757492DC16CDB0056741B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		883D96242DA0624B00C61DE9 /* Debug */ = {
@@ -148,9 +291,9 @@
 				DEVELOPMENT_TEAM = 94BBMDY9VT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CozyKnitting/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Allow access to install images from your gallery";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -176,9 +319,9 @@
 				DEVELOPMENT_TEAM = 94BBMDY9VT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CozyKnitting/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Allow access to install images from your gallery";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -337,6 +480,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		885757472DC16CDB0056741B /* CozyKnitting.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8857574E2DC16CDB0056741B /* CozyKnitting.xcdatamodel */,
+			);
+			currentVersion = 8857574E2DC16CDB0056741B /* CozyKnitting.xcdatamodel */;
+			path = CozyKnitting.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 883D96052DA0624700C61DE9 /* Project object */;
 }
