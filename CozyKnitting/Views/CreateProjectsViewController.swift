@@ -1,7 +1,6 @@
 import UIKit
 
 protocol CreateProjectViewProtocol: AnyObject {
-    func showImagePicker()
     func displaySelectedImage(_ image: UIImage)
     func showEmptyNameAlert()
     func showSizePicker()
@@ -33,13 +32,11 @@ final class CreateProjectsViewController: UIViewController, CreateProjectViewPro
     private let saveButton = UIButton()
     
     private var presenter: CreateProjectPresenterProtocol!
-    private var imagePickerService: ImagePickerViewController!
     
     init(delegate: CreateProjectsDelegate) {
         super.init(nibName: nil, bundle: nil)
-        let router = CreateProjectsRouter(viewControoller: self, delegate: delegate)
+        let router = CreateProjectsRouter(viewControoller: self, delegate: delegate,)
         self.presenter = CreateProjectPresenter(view: self, router: router)
-        self.imagePickerService = ImagePickerViewController(presentationController: self)
     }
     
     required init?(coder: NSCoder) {
@@ -135,7 +132,7 @@ final class CreateProjectsViewController: UIViewController, CreateProjectViewPro
         }
         
         NSLayoutConstraint.activate([
-            header.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            header.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             header.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
             
             selectImageButton.topAnchor.constraint(equalTo: header.bottomAnchor, constant: 25),
@@ -228,12 +225,6 @@ final class CreateProjectsViewController: UIViewController, CreateProjectViewPro
     
     
     // MARK: - View Protocol Methods
-    
-    func showImagePicker() {
-        imagePickerService.presentImagePicker { [weak self] image in
-            self?.presenter.didSelectImage(image)
-        }
-    }
     
     func displaySelectedImage(_ image: UIImage) {
         selectImageButton.setImage(image, for: .normal)

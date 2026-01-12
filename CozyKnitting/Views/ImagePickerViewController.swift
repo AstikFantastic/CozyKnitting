@@ -3,13 +3,13 @@ import UIKit
 final class ImagePickerViewController: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     private weak var presentationController: UIViewController?
-    private var completion: ((UIImage?) -> Void)?
+    private var completion: ((UIImage) -> Void)?
 
     init(presentationController: UIViewController) {
         self.presentationController = presentationController
     }
 
-    func presentImagePicker(completion: @escaping (UIImage?) -> Void) {
+    func presentImagePicker(completion: @escaping (UIImage) -> Void) {
         self.completion = completion
 
         let picker = UIImagePickerController()
@@ -21,7 +21,7 @@ final class ImagePickerViewController: NSObject, UIImagePickerControllerDelegate
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         picker.dismiss(animated: true)
-        let image = info[.originalImage] as? UIImage
+        guard let image = info[.originalImage] as? UIImage else { return }
         completion?(image)
     }
 

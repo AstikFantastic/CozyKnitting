@@ -17,7 +17,9 @@ final class ProjectsViewController: UIViewController, ProjectsViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = AppColors.backgroundColor
-        title = "Projects"
+        navigationItem.title = "Projects"
+        
+        
         
         setupCollectionProjectsView()
         setupNewProjectButton()
