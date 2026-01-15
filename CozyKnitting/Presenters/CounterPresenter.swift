@@ -4,6 +4,7 @@ protocol CounterPresenterProtocol {
     func viewDidLoad()
     func didTapPlus()
     func didTapMinus()
+    func didTapReset()
     func startIncrementing(_ direction: CounterDirection)
     func stopIncrementing()
 }
@@ -52,6 +53,10 @@ final class CounterPresenter: CounterPresenterProtocol {
     
     func didTapMinus() {
         changeCount(by: -1)
+    }
+    
+    func didTapReset() {
+        count = 0
     }
     
     func startIncrementing(_ direction: CounterDirection) {
