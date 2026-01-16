@@ -145,7 +145,7 @@ final class CounterViewController: UIViewController, CounterViewProtocol {
     
     @objc private func resetTapped() {
         resetButton.imageView?.addSymbolEffect(.rotate, options: .speed(10), animated: true)
-        presenter.didTapReset()
+        showResetAlert()
     }
     
     @objc private func handlePlusLongPress(_ gesture: UILongPressGestureRecognizer) {
@@ -175,7 +175,22 @@ final class CounterViewController: UIViewController, CounterViewProtocol {
     }
 
     @objc private func addToCurrent() {
-        addToCurrentButton.imageView?.addSymbolEffect(.breathe, options: .speed(5))
+        addToCurrentButton.imageView?.addSymbolEffect(.bounce, animated: true)
+    }
+    
+    //MARK: - Alert
+    
+    private func showResetAlert() {
+        let alert = UIAlertController(title: "Counter Reset", message: "Are you sure you want to reset", preferredStyle: .alert)
+        let yesAction = UIAlertAction(title: "Yes", style: .destructive) { [weak self] _ in
+            self?.presenter.didTapReset()
+        }
+        let noAction = UIAlertAction(title: "No", style: .cancel, handler: nil)
+        
+        alert.addAction(yesAction)
+        alert.addAction(noAction)
+        
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
