@@ -7,6 +7,10 @@ protocol CounterPresenterProtocol {
     func didTapReset()
     func startIncrementing(_ direction: CounterDirection)
     func stopIncrementing()
+    
+    func shouldShowResetAlert() -> Bool
+    func setNeverShowResetAlert(_ value: Bool)
+    func handleResetTap()
 }
 
 enum CounterDirection {
@@ -17,6 +21,17 @@ enum CounterDirection {
 final class CounterPresenter: CounterPresenterProtocol {
     
     weak var view: CounterViewProtocol?
+    
+    private let neverShowKey = "neverShowResetAlert"
+    
+    
+    func shouldShowResetAlert() -> Bool {
+           !UserDefaults.standard.bool(forKey: neverShowKey)
+       }
+
+       func setNeverShowResetAlert(_ value: Bool) {
+           UserDefaults.standard.set(value, forKey: neverShowKey)
+       }
     
     private var count: Int = 0 {
         didSet {
@@ -56,9 +71,18 @@ final class CounterPresenter: CounterPresenterProtocol {
     }
     
     func didTapReset() {
+        view?.animateReset()
         count = 0
     }
     
+    func handleResetTap() {
+        if shouldShowResetAlert() {
+            view?.showResetAlert()
+        } else {
+            didTapReset()
+        }
+    }
+
     func startIncrementing(_ direction: CounterDirection) {
         self.direction = direction
         timer?.invalidate()
@@ -73,7 +97,6 @@ final class CounterPresenter: CounterPresenterProtocol {
             case .none:
                 break
             }
-            
         }
     }
     
