@@ -11,9 +11,27 @@ final class CounterViewController: UIViewController, CounterViewProtocol {
     private let stitchesCount = UILabel()
     private let prosButton = UIButton()
     private let consButton = UIButton()
-    private let resetButton = UIButton.makeButton(title: "Reset", systemImage: "arrow.counterclockwise", foregroundColor: .black, backgroundColor: .red, textSize: 16)
-    private let saveNewProjectButton = UIButton.makeButton(title: "Save new project", systemImage: "square.and.arrow.down.badge.checkmark.fill", foregroundColor: .black, backgroundColor: .purple, textSize: 16)
-    private let addToCurrentButton = UIButton()
+    private let resetButton = UIButton.makeButton(
+        title: "Reset",
+        systemImage: "arrow.trianglehead.counterclockwise",
+        foregroundColor: .black,
+        backgroundColor: .red,
+        textSize: 16
+    )
+    private let saveNewProjectButton = UIButton.makeButton(
+        title: "Save as a new project",
+        systemImage: "square.and.arrow.down.badge.checkmark.fill",
+        foregroundColor: .black,
+        backgroundColor: AppColors.buttonBackgroungColor,
+        textSize: 16
+    )
+    private let addToCurrentButton = UIButton.makeButton(
+        title: "Add to Current Project",
+        systemImage: "checkmark.circle.badge.plus",
+        foregroundColor: .black,
+        backgroundColor: .green,
+        textSize: 16
+    )
     
     var presenter: CounterPresenterProtocol!
     
@@ -65,25 +83,20 @@ final class CounterViewController: UIViewController, CounterViewProtocol {
         consButton.addTarget(self, action: #selector(minusOne), for: .touchUpInside)
         consButton.addGestureRecognizer(minusLongPress)
         
-//        resetButton.setImage(UIImage(systemName: "arrow.counterclockwise"), for: .normal)
-//        resetButton.tintColor = .black
-//        resetButton.titleLabel?.text = "Reset"
-//        resetButton.titleLabel?.textColor = .black
-//        resetButton.titleLabel?.font = UIFont(name: "Arial Rounded MT Bold", size: 70)
-//        resetButton.layer.cornerRadius = 10
-//        resetButton.backgroundColor = .red
         resetButton.addTarget(self, action: #selector(resetTapped), for: .touchUpInside)
         
+        saveNewProjectButton.addTarget(self, action: #selector(saveAsNew), for: .touchUpInside)
         
-        
+        addToCurrentButton.addTarget(self, action: #selector(addToCurrent), for: .touchUpInside)
         
         view.addSubview(stitchesCount)
         view.addSubview(prosButton)
         view.addSubview(consButton)
         view.addSubview(resetButton)
         view.addSubview(saveNewProjectButton)
+        view.addSubview(addToCurrentButton)
         
-        [stitchesCount, prosButton, consButton, resetButton].forEach {
+        [stitchesCount, prosButton, consButton, resetButton, saveNewProjectButton, addToCurrentButton].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
         
@@ -106,7 +119,15 @@ final class CounterViewController: UIViewController, CounterViewProtocol {
             resetButton.widthAnchor.constraint(equalToConstant: 100),
             resetButton.heightAnchor.constraint(equalToConstant: 50),
             
+            saveNewProjectButton.leadingAnchor.constraint(equalTo: resetButton.trailingAnchor, constant: 20),
+            saveNewProjectButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            saveNewProjectButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -100),
+            saveNewProjectButton.heightAnchor.constraint(equalToConstant: 50),
             
+            addToCurrentButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            addToCurrentButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            addToCurrentButton.topAnchor.constraint(equalTo: resetButton.bottomAnchor, constant: 20),
+            addToCurrentButton.heightAnchor.constraint(equalToConstant: 50),
             
             
         ])
@@ -123,6 +144,7 @@ final class CounterViewController: UIViewController, CounterViewProtocol {
     }
     
     @objc private func resetTapped() {
+        resetButton.imageView?.addSymbolEffect(.rotate, options: .speed(10), animated: true)
         presenter.didTapReset()
     }
     
@@ -148,7 +170,13 @@ final class CounterViewController: UIViewController, CounterViewProtocol {
         }
     }
     
+    @objc private func saveAsNew() {
+        saveNewProjectButton.imageView?.addSymbolEffect(.bounce, animated: true)
+    }
 
+    @objc private func addToCurrent() {
+        addToCurrentButton.imageView?.addSymbolEffect(.breathe, options: .speed(5))
+    }
 }
 
 
