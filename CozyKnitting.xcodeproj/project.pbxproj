@@ -28,9 +28,11 @@
 		885757672DC172B20056741B /* CounterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885757662DC172B20056741B /* CounterPresenter.swift */; };
 		885757692DC172C40056741B /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885757682DC172C40056741B /* ProfilePresenter.swift */; };
 		8857576B2DC172DA0056741B /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8857576A2DC172DA0056741B /* ProjectViewController.swift */; };
-		8857576D2DC172E90056741B /* CounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8857576C2DC172E90056741B /* CounterViewController.swift */; };
 		8857576F2DC172FA0056741B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8857576E2DC172FA0056741B /* ProfileViewController.swift */; };
 		88BABD0F2DC7770E00DAB433 /* ImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BABD0E2DC7770E00DAB433 /* ImagePickerViewController.swift */; };
+		88C4EB422F1C2AE300E5EEB5 /* UIButton + Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C4EB412F1C2AE300E5EEB5 /* UIButton + Factory.swift */; };
+		88C4EB4C2F1C2D9C00E5EEB5 /* CounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C4EB482F1C2D9C00E5EEB5 /* CounterViewController.swift */; };
+		88C4EB4E2F1C2D9C00E5EEB5 /* CounterViewController + Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C4EB4A2F1C2D9C00E5EEB5 /* CounterViewController + Alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,9 +59,11 @@
 		885757662DC172B20056741B /* CounterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterPresenter.swift; sourceTree = "<group>"; };
 		885757682DC172C40056741B /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
 		8857576A2DC172DA0056741B /* ProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewController.swift; sourceTree = "<group>"; };
-		8857576C2DC172E90056741B /* CounterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewController.swift; sourceTree = "<group>"; };
 		8857576E2DC172FA0056741B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		88BABD0E2DC7770E00DAB433 /* ImagePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerViewController.swift; sourceTree = "<group>"; };
+		88C4EB412F1C2AE300E5EEB5 /* UIButton + Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Factory.swift"; sourceTree = "<group>"; };
+		88C4EB482F1C2D9C00E5EEB5 /* CounterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewController.swift; sourceTree = "<group>"; };
+		88C4EB4A2F1C2D9C00E5EEB5 /* CounterViewController + Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CounterViewController + Alert.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,7 @@
 			children = (
 				88184F2C2DC4F8E000E51EC0 /* AppColors.swift */,
 				88458D752DC7AD5100F3931B /* CreateProjectsDelegate.swift */,
+				88C4EB412F1C2AE300E5EEB5 /* UIButton + Factory.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -138,7 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				8857576A2DC172DA0056741B /* ProjectViewController.swift */,
-				8857576C2DC172E90056741B /* CounterViewController.swift */,
+				88C4EB4B2F1C2D9C00E5EEB5 /* CounterViewController */,
 				8857576E2DC172FA0056741B /* ProfileViewController.swift */,
 				88184F272DC4F7F500E51EC0 /* CreateProjectsViewController.swift */,
 				88BABD0E2DC7770E00DAB433 /* ImagePickerViewController.swift */,
@@ -167,6 +172,15 @@
 				88458D732DC7AA2D00F3931B /* CreateProjectsRouter.swift */,
 			);
 			path = Routers;
+			sourceTree = "<group>";
+		};
+		88C4EB4B2F1C2D9C00E5EEB5 /* CounterViewController */ = {
+			isa = PBXGroup;
+			children = (
+				88C4EB482F1C2D9C00E5EEB5 /* CounterViewController.swift */,
+				88C4EB4A2F1C2D9C00E5EEB5 /* CounterViewController + Alert.swift */,
+			);
+			path = CounterViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,9 +266,11 @@
 				885757612DC1724B0056741B /* ProfileRouter.swift in Sources */,
 				885757652DC1729F0056741B /* ProjectPresenter.swift in Sources */,
 				88184F2E2DC4F8E000E51EC0 /* AppColors.swift in Sources */,
+				88C4EB422F1C2AE300E5EEB5 /* UIButton + Factory.swift in Sources */,
 				885757542DC16CDB0056741B /* CozyKnitting.xcdatamodeld in Sources */,
+				88C4EB4C2F1C2D9C00E5EEB5 /* CounterViewController.swift in Sources */,
+				88C4EB4E2F1C2D9C00E5EEB5 /* CounterViewController + Alert.swift in Sources */,
 				882700B72DC3D1B000C40166 /* ProjectsModel.swift in Sources */,
-				8857576D2DC172E90056741B /* CounterViewController.swift in Sources */,
 				88458D742DC7AA2D00F3931B /* CreateProjectsRouter.swift in Sources */,
 				88BABD0F2DC7770E00DAB433 /* ImagePickerViewController.swift in Sources */,
 				885757552DC16CDB0056741B /* SceneDelegate.swift in Sources */,
