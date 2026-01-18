@@ -4,8 +4,8 @@ protocol CreateProjectPresenterProtocol: AnyObject {
     func didTapSelectImage()
     func didSelectImage(_ image: UIImage?)
     func saveProject(name: String, image: UIImage)
-    func didTapSizeButton()
-    func didSelectSize(_ size: String)
+//    func didTapSizeButton()
+//    func didSelectSize(_ size: String)
 }
 
 final class CreateProjectPresenter: CreateProjectPresenterProtocol {
@@ -40,12 +40,12 @@ final class CreateProjectPresenter: CreateProjectPresenterProtocol {
         router.closeAndReturnToProjects(with: newProject)
     }
     
-    func didTapSizeButton() {
-        view?.showSizePicker()
-    }
+//    func didTapSizeButton() {
+//        view?.showSizePicker()
+//    }
     
-    func didSelectSize(_ size: String) {
-        view?.updateSizeButtonTitle("Size: \(size)")
-    }
+//    func didSelectSize(_ size: String) {
+//        view?.updateSizeButtonTitle("Size: \(size)")
+//    }
     
 }

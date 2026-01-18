@@ -17,7 +17,7 @@ final class ProjectsRouter: ProjectsRouterProtocol {
     func openCreateNewProjectVC(from view: UIViewController) {
         guard let projectsVC = view as? CreateProjectsDelegate else { return }
         let createNewProjectVC = CreateProjectsViewController(delegate: projectsVC)
-//        view.navigationController?.pushViewController(createNewProjectVC, animated: true)
         view.present(createNewProjectVC, animated: true)
     }
+    
 }

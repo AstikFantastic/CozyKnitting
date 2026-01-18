@@ -12,7 +12,7 @@ extension CounterViewController {
         switchView.isOn = false
         
         let label = UILabel(frame: .zero)
-        label.text = "Do not show again alert again"
+        label.text = "Do not show this alert again"
         label.font = .systemFont(ofSize: 13)
         label.numberOfLines = 0
         
