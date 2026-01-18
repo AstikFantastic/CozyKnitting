@@ -4,24 +4,22 @@ protocol CreateProjectPresenterProtocol: AnyObject {
     func didTapSelectImage()
     func didSelectImage(_ image: UIImage?)
     func saveProject(name: String, image: UIImage)
-//    func didTapSizeButton()
-//    func didSelectSize(_ size: String)
+
 }
 
 final class CreateProjectPresenter: CreateProjectPresenterProtocol {
 
-    
-    weak var view: CreateProjectViewProtocol?
+    weak var view: CreateProjectsViewProtocol?
     let router: CreateProjectsRouterProtocol
 
-    init(view: CreateProjectViewProtocol, router: CreateProjectsRouterProtocol) {
+    init(view: CreateProjectsViewProtocol, router: CreateProjectsRouterProtocol) {
         self.view = view
         self.router = router
     }
 
     func didTapSelectImage() {
-        router.showImagePicker { image in
-            self.view?.displaySelectedImage(image)
+        router.showImagePicker { [weak self] image in
+            self?.view?.displaySelectedImage(image)
         }
     }
 
@@ -40,12 +38,5 @@ final class CreateProjectPresenter: CreateProjectPresenterProtocol {
         router.closeAndReturnToProjects(with: newProject)
     }
     
-//    func didTapSizeButton() {
-//        view?.showSizePicker()
-//    }
-    
-//    func didSelectSize(_ size: String) {
-//        view?.updateSizeButtonTitle("Size: \(size)")
-//    }
     
 }

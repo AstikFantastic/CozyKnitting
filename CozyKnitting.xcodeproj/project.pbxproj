@@ -144,9 +144,9 @@
 			children = (
 				8857576A2DC172DA0056741B /* ProjectViewController.swift */,
 				88C4EB4B2F1C2D9C00E5EEB5 /* CounterViewController */,
-				8857576E2DC172FA0056741B /* ProfileViewController.swift */,
 				88184F272DC4F7F500E51EC0 /* CreateProjectsViewController.swift */,
 				88BABD0E2DC7770E00DAB433 /* ImagePickerViewController.swift */,
+				8857576E2DC172FA0056741B /* ProfileViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -156,8 +156,8 @@
 			children = (
 				885757642DC1729F0056741B /* ProjectPresenter.swift */,
 				885757662DC172B20056741B /* CounterPresenter.swift */,
-				885757682DC172C40056741B /* ProfilePresenter.swift */,
 				88184F292DC4F80C00E51EC0 /* CreateProjectPresenter.swift */,
+				885757682DC172C40056741B /* ProfilePresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";

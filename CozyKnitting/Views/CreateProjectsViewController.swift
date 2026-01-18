@@ -1,17 +1,12 @@
 import UIKit
 
-protocol CreateProjectViewProtocol: AnyObject {
+protocol CreateProjectsViewProtocol: AnyObject {
     func displaySelectedImage(_ image: UIImage)
     func showEmptyNameAlert()
-
 }
 
-protocol CreateProjectsPresenterProtocol: AnyObject {
-    func saveProject(name: String, image: UIImage)
-}
-
-final class CreateProjectsViewController: UIViewController, CreateProjectViewProtocol {
-    
+final class CreateProjectsViewController: UIViewController, CreateProjectsViewProtocol {
+        
     private let header = UILabel()
     private let selectImageButton = UIButton()
     private let nameLabel = UILabel()
@@ -19,13 +14,14 @@ final class CreateProjectsViewController: UIViewController, CreateProjectViewPro
     private let descriptionLabel = UILabel()
     private let descriptionTextView = UITextView()
     private let descriptionPlaceholderLabel = UILabel()
-    private let saveButton = UIButton()
+    private let saveButton = UIButton.makeButton(title: "Save", systemImage: "", foregroundColor: .white, backgroundColor: AppColors.buttonBackgroungColor, textSize: 16)
     
     private var presenter: CreateProjectPresenterProtocol!
     
+    
     init(delegate: CreateProjectsDelegate) {
         super.init(nibName: nil, bundle: nil)
-        let router = CreateProjectsRouter(viewControoller: self, delegate: delegate,)
+        let router = CreateProjectsRouter(viewControoller: self, delegate: delegate)
         self.presenter = CreateProjectPresenter(view: self, router: router)
     }
     
@@ -90,14 +86,10 @@ final class CreateProjectsViewController: UIViewController, CreateProjectViewPro
         descriptionPlaceholderLabel.textColor = .lightGray
         descriptionTextView.addSubview(descriptionPlaceholderLabel)
                
-        saveButton.setTitle("Save", for: .normal)
-        saveButton.backgroundColor = AppColors.buttonBackgroungColor
-        saveButton.setTitleColor(.white, for: .normal)
-        saveButton.layer.cornerRadius = 12
         saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
         view.addSubview(saveButton)
         
-        [header, selectImageButton, nameLabel, projectNameTextField, descriptionLabel, descriptionTextView, descriptionPlaceholderLabel, /*buttonsStack, pickerViewButton, */saveButton].forEach {
+        [header, selectImageButton, nameLabel, projectNameTextField, descriptionLabel, descriptionTextView, descriptionPlaceholderLabel, saveButton].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
         
@@ -135,7 +127,6 @@ final class CreateProjectsViewController: UIViewController, CreateProjectViewPro
             saveButton.heightAnchor.constraint(equalToConstant: 40)
         ])
     }
-    
   
     
     // MARK: - View Protocol Methods
@@ -161,31 +152,6 @@ final class CreateProjectsViewController: UIViewController, CreateProjectViewPro
         let name = projectNameTextField.text ?? ""
         let image = selectImageButton.image(for: .normal) ?? UIImage(named: "emptyProjectImage")!
         presenter.saveProject(name: name, image: image)
-    }
-    
-    func makeButtonConfiguration(title: String) -> UIButton.Configuration {
-        var config = UIButton.Configuration.filled()
-        config.title = title
-        config.imagePadding = 8
-        config.imagePlacement = .leading
-        config.cornerStyle = .capsule
-        config.baseBackgroundColor = .systemGray5
-        config.baseForegroundColor = .gray
-        return config
-    }
-    
-    func selectButton(_ button: UIButton) {
-        var config = button.configuration!
-        config.baseBackgroundColor = AppColors.buttonBackgroungColor
-        config.baseForegroundColor = .white
-        button.configuration = config
-    }
-    
-    func deselectButton(_ button: UIButton) {
-        var config = button.configuration!
-        config.baseBackgroundColor = .systemGray5
-        config.baseForegroundColor = .gray
-        button.configuration = config
     }
 }
 

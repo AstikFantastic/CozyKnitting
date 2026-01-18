@@ -19,8 +19,6 @@ final class ProjectsViewController: UIViewController, ProjectsViewProtocol {
         view.backgroundColor = AppColors.backgroundColor
         navigationItem.title = "Projects"
         
-        
-        
         setupCollectionProjectsView()
         setupNewProjectButton()
         
