@@ -15,9 +15,16 @@ final class CreateProjectsViewController: UIViewController, CreateProjectsViewPr
     private let descriptionTextView = UITextView()
     private let descriptionPlaceholderLabel = UILabel()
     private let saveButton = UIButton.makeButton(title: "Save", systemImage: "", foregroundColor: .white, backgroundColor: AppColors.buttonBackgroungColor, textSize: 16)
+    private let addCounterButton = UIButton.makeButton(title: "+ Add counter", systemImage: "", foregroundColor: .white, backgroundColor: AppColors.buttonBackgroungColor, textSize: 13)
+    
+    private let counteContainer = UIView()
+    private let counterContainerHStack = UIStackView()
+    private let counterContainerName = UITextField()
+    private let counterContainerProsButton = UIButton.makeButton(title: "+", systemImage: "", foregroundColor: .white, backgroundColor: AppColors.buttonBackgroungColor, textSize: 20)
+    private let counterContainerConsButton = UIButton.makeButton(title: "-", systemImage: "", foregroundColor: .white, backgroundColor: AppColors.buttonBackgroungColor, textSize: 20)
+    private let counterContainerStitchesCount = UILabel()
     
     private var presenter: CreateProjectPresenterProtocol!
-    
     
     init(delegate: CreateProjectsDelegate) {
         super.init(nibName: nil, bundle: nil)
@@ -85,11 +92,30 @@ final class CreateProjectsViewController: UIViewController, CreateProjectsViewPr
         descriptionPlaceholderLabel.font = UIFont.systemFont(ofSize: 16)
         descriptionPlaceholderLabel.textColor = .lightGray
         descriptionTextView.addSubview(descriptionPlaceholderLabel)
-               
+        
+        addCounterButton.addTarget(self, action: #selector(addOneMoreCounter), for: .touchUpInside)
+        view.addSubview(addCounterButton)
+        
+        counteContainer.layer.borderWidth = 1
+        counteContainer.layer.borderColor = UIColor.black.cgColor
+        counteContainer.layer.cornerRadius = 5
+        view.addSubview(counteContainer)
+        counteContainer.addSubview(counterContainerHStack)
+        
+        counterContainerHStack.axis = .horizontal
+        counterContainerHStack.spacing = 12
+        counterContainerHStack.alignment = .center
+        counterContainerHStack.distribution = .fill
+        counterContainerHStack.addArrangedSubview(counterContainerConsButton)
+        counterContainerHStack.addArrangedSubview(counterContainerProsButton)
+        
+//        counterContainerName = UITextField()
+//        counterContainerStitchesCount = UILabel()
+        
         saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
         view.addSubview(saveButton)
         
-        [header, selectImageButton, nameLabel, projectNameTextField, descriptionLabel, descriptionTextView, descriptionPlaceholderLabel, saveButton].forEach {
+        [header, selectImageButton, nameLabel, projectNameTextField, descriptionLabel, descriptionTextView, descriptionPlaceholderLabel, addCounterButton, counteContainer, counterContainerHStack, saveButton].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
         
@@ -120,6 +146,17 @@ final class CreateProjectsViewController: UIViewController, CreateProjectsViewPr
             
             descriptionPlaceholderLabel.topAnchor.constraint(equalTo: descriptionTextView.topAnchor, constant: 8),
             descriptionPlaceholderLabel.leadingAnchor.constraint(equalTo: descriptionTextView.leadingAnchor, constant: 8),
+            
+            addCounterButton.topAnchor.constraint(equalTo: descriptionTextView.bottomAnchor, constant: 10),
+            addCounterButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
+            
+            counteContainer.topAnchor.constraint(equalTo: addCounterButton.bottomAnchor, constant: 10),
+            counteContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
+            counteContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
+            counteContainer.heightAnchor.constraint(equalToConstant: 150),
+            
+            counterContainerHStack.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            counterContainerHStack.centerXAnchor.constraint(equalTo: view.centerXAnchor),
                         
             saveButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -25),
             saveButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -152,6 +189,10 @@ final class CreateProjectsViewController: UIViewController, CreateProjectsViewPr
         let name = projectNameTextField.text ?? ""
         let image = selectImageButton.image(for: .normal) ?? UIImage(named: "emptyProjectImage")!
         presenter.saveProject(name: name, image: image)
+    }
+    
+    @objc private func addOneMoreCounter() {
+        print("Counter Added")
     }
 }
 

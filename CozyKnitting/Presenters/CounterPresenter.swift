@@ -26,12 +26,12 @@ final class CounterPresenter: CounterPresenterProtocol {
     
     
     func shouldShowResetAlert() -> Bool {
-           !UserDefaults.standard.bool(forKey: neverShowKey)
-       }
-
-       func setNeverShowResetAlert(_ value: Bool) {
-           UserDefaults.standard.set(value, forKey: neverShowKey)
-       }
+        !UserDefaults.standard.bool(forKey: neverShowKey)
+    }
+    
+    func setNeverShowResetAlert(_ value: Bool) {
+        UserDefaults.standard.set(value, forKey: neverShowKey)
+    }
     
     private var count: Int = 0 {
         didSet {
@@ -57,7 +57,7 @@ final class CounterPresenter: CounterPresenterProtocol {
     init(view: CounterViewProtocol) {
         self.view = view
     }
-
+    
     func viewDidLoad() {
         view?.updateCount(count)
     }
@@ -71,18 +71,20 @@ final class CounterPresenter: CounterPresenterProtocol {
     }
     
     func didTapReset() {
-        view?.animateReset()
-        count = 0
+        if count != 0 {
+            view?.animateReset()
+            count = 0
+        }
     }
     
     func handleResetTap() {
-        if shouldShowResetAlert() {
+        if shouldShowResetAlert() && count != 0 {
             view?.showResetAlert()
         } else {
             didTapReset()
         }
     }
-
+    
     func startIncrementing(_ direction: CounterDirection) {
         self.direction = direction
         timer?.invalidate()
